@@ -86,6 +86,12 @@ public class User {
 	private Integer userStatus;
 
 
+	@JsonProperty("hairColour")
+	@JacksonXmlProperty(localName = "hairColour")
+
+	private HairColour hairColour;
+
+
 	public User id(Long id) {
 		this.id = id;
 		return this;
@@ -267,6 +273,29 @@ public class User {
 
 	public void setUserStatus(Integer userStatus) {
 		this.userStatus = userStatus;
+	}
+
+
+	public User hairColour(HairColour hairColour) {
+		this.hairColour = hairColour;
+		return this;
+	}
+
+
+	/**
+	 * Hair Colour
+	 *
+	 * @return userStatus
+	 */
+	@Schema(example = "BLONDE", description = "Hair Colour", allOf = HairColour.class)
+
+
+	public HairColour getHairColour() {
+		return hairColour;
+	}
+
+	public void setHairColour(HairColour hairColour) {
+		this.hairColour = hairColour;
 	}
 
 
